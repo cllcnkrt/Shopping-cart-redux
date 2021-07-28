@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import "./styles.css";
 import { Route } from "react-router-dom";
 
@@ -6,7 +7,7 @@ import Products from "./components/Products";
 import Cart from "./components/Cart";
 
 
-export default function App() {
+const  App=()=> {
   return (
     <div className="App">
       <h1>
@@ -25,3 +26,11 @@ export default function App() {
     </div>
   );
 }
+
+const mapStateToProps = state =>{
+  return{
+    bookList: state.bookList
+  }
+}
+
+export default conntect(mapStateToProps)(App)
