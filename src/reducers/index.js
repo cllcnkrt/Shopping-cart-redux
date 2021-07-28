@@ -5,6 +5,11 @@ const INITIAL_STATE = {
     cart: []
 }
 
-export const reducer = (state, action) =>{
-    return state;
+export const reducer = (state= INITIAL_STATE, action) =>{
+    switch(action.type){
+        case 'SEPETE_EKLE':
+        return {...state, cart [...state.cart, action.payload]}
+        
+    }
+    
 }
